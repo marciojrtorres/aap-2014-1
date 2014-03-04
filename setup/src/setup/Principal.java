@@ -3,7 +3,6 @@ package setup;
 import static java.lang.System.out;
 import aritmetica.Calculadora;
 import static aritmetica.Calculadora.soma;
-import static aritmetica.Calculadora.subtrai;
 
 public class Principal {
     public static void main(String[] args) {
@@ -18,8 +17,6 @@ public class Principal {
         out.println(soma(8,12) == 20); // true
         out.println(soma(-9,-1) == -10); // true
         out.println(soma(2000000000,2000000000)); // buffer overflow
-
-        out.println(subtrai(10,4) == 6);
-
+        
     }
 }
