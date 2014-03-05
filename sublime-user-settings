@@ -1,22 +1,24 @@
 {
-    "font_face": "Consolas",
+    "bold_folder_labels": true,
+    "caret_extra_bottom": 3,
+    "caret_extra_top": 3,
     "font_options":
     [
         "subpixel_antialias"
     ],
     "font_size": 12,
+    "gutter": true,
     "highlight_line": true,
+    "highlight_modified_tabs": true,
     "line_numbers": false,
     "line_padding_bottom": 3,
     "line_padding_top": 3,
+    "margin": 2,
     "rulers":
     [
         80,
         120
     ],
     "tab_size": 4,
-    "translate_tabs_to_spaces": true,
-    "caret_extra_top": 3,
-    "caret_extra_bottom": 3,
-    "highlight_modified_tabs": true
+    "translate_tabs_to_spaces": true
 }
