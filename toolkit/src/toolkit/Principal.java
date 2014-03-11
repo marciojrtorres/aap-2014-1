@@ -2,7 +2,27 @@ package toolkit;
 
 public class Principal {
     public static void main(String[] args) {
-        // System.out.println("Estou vivo!!!".toUpperCase());
+        // orientacoesGerais();        
+        String s1 = new String("Instituto Federal");
+        String s2 = new String("Instituto Federal");
+        System.out.println(s1 == s2); // false
+        System.out.println(s1.equals(s2)); // true, mas nao podemos usar
+
+        // igual(String,String):boolean
+        System.out.println(igual(s1, s2) == true);
+        System.out.println(igual("abc", "dba") == false);
+        System.out.println(igual("abc", "aBc") == false);
+        System.out.println(igual("abc ", "abc") == false);
+        System.out.println(igual("", "") == true);
+
+
+    }
+
+
+
+
+
+    private static void orientacoesGerais() {
         // API do Java // Nao usar
 
         String palavra = "furg";
@@ -51,6 +71,5 @@ public class Principal {
         for (int i = 0; i < exemplo.length; i++) {
             System.out.println((char) (exemplo[i] - 32));
         }
-        
     }
 }
