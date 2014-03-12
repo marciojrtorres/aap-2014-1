@@ -2,20 +2,11 @@ package toolkit;
 
 public class Principal {
     public static void main(String[] args) {
-        // orientacoesGerais();        
-        String s1 = new String("Instituto Federal");
-        String s2 = new String("Instituto Federal");
-        System.out.println(s1 == s2); // false
-        System.out.println(s1.equals(s2)); // true, mas nao podemos usar
-
-        // igual(String,String):boolean
-        System.out.println(igual(s1, s2) == true);
-        System.out.println(igual("abc", "dba") == false);
-        System.out.println(igual("abc", "aBc") == false);
-        System.out.println(igual("abc ", "abc") == false);
-        System.out.println(igual("", "") == true);
+        // comente esta linha para não imprimir as orientacoes
+        orientacoesGerais();     
 
 
+        
     }
 
 
@@ -32,23 +23,31 @@ public class Principal {
         // este método é permitido
         char[] letras = palavra.toCharArray();
 
+        // consultando o tamanho
+        System.out.println(letras.length);
+
+        // lendo cada caractere no array
         System.out.println(letras[0]);
         System.out.println(letras[1]);
         System.out.println(letras[2]);
         System.out.println(letras[3]);
 
+        // lendo o código numérico cada caractere
         System.out.println((int)letras[0]);
         System.out.println((int)letras[1]);
         System.out.println((int)letras[2]);
         System.out.println((int)letras[3]);
 
+        // o código das letras minúsculas e maiúsculas
         System.out.println((int)'a'); // 97 
         System.out.println((int)'z'); // 122
         System.out.println((int)'A'); // 65
         System.out.println((int)'Z'); // 90
         
+        // lendo o caractere a partir de um código
         System.out.println((char)104); 
 
+        // criando um array de caracteres e inicializando
         char[] teste = new char[5];
         teste[0] = 't';
         teste[1] = 'e';
@@ -56,14 +55,22 @@ public class Principal {
         teste[3] = 't';
         teste[4] = 'e';
 
+        // criando uma string a partir deste array
         String strteste = new String(teste);
 
         System.out.println(strteste);
 
+        // declarando e inicializando um array de caracteres
         char[] exemplo = {'e', 'x', 'e', 'm', 'p', 'l', 'o'};
         System.out.println(exemplo.length);
         System.out.println(exemplo);
 
+        // percorrendo (iterando) o array de caracteres
+        for (int i = 0; i < exemplo.length; i++) {
+            System.out.println(exemplo[i]);
+        }
+
+        // percorrendo e modificando o caractere
         for (int i = 0; i < exemplo.length; i++) {
             System.out.println((char) (exemplo[i] + 1));
         }

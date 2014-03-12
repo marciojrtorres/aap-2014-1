@@ -1,2 +1,2 @@
 #!/bin/bash
-java -cp bin setup.Principal
+java -cp bin toolkit.Principal
