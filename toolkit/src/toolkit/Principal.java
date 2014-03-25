@@ -1,16 +1,19 @@
 package toolkit;
 
+import static toolkit.StringUtil.eq;
+import static toolkit.StringUtil.trimLeft;
+
 public class Principal {
     public static void main(String[] args) {
-        // comente esta linha para não imprimir as orientacoes
-        orientacoesGerais();     
+        // comente/descomente a linha a seguir para orientacoes
+        // orientacoesGerais();
 
+        System.out.println(eq("zzqq", "zzqq"));
+        System.out.println(eq("zzq",  "zzqq") == false);
+        System.out.println(eq("zzqa", "zzqq") == false);
 
-        
+        System.out.println(eq(trimLeft("  ab ab "), "ab ab "));
     }
-
-
-
 
 
     private static void orientacoesGerais() {
