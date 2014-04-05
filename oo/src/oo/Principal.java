@@ -2,43 +2,31 @@ package oo;
 
 public class Principal {
     public static void main(String[] args) {
-        // Agua
-        // todo objeto tem estado
+       
+        Dado dado = new Dado(); // de 1 a 6
+        // API do Dado (como usar o dado) (intenção)
+        System.out.println(dado.getValor()); // um valor de 1 a 6
+        dado.joga(); // mudei o estado
+        System.out.println(dado.getValor()); // outro valor
+        dado.joga(); // mudei o estado
+        System.out.println(dado.getValor()); // outro valor
 
-        Agua agua = new Agua(); // instancia
-        // temperatura? 25
-        System.out.println(agua.getTemperatura()); // 25        
-        // como tornar a agua gasosa?
-        agua.esquentar(); // ou agua.esquenta()
-        System.out.println(agua.getTemperatura()); // 26
-        agua.esquentar();
-        System.out.println(agua.getTemperatura()); // 27
-        // como tornar a agua solida?
-        agua.esfriar(); // ou agua.esfria()
-        System.out.println(agua.getTemperatura()); // 26
-        
-        System.out.println(agua.isLiquida()); // true
-        System.out.println(agua.isSolida());  // false
-        System.out.println(agua.isGasosa());  // false
-        
-        // se (agua.estaLiquida()) 
-        if (agua.isLiquida()) {
-            System.out.println("A agua estah liquida!!! yhaa!");
-        }
-        // 105
-        // enquanto (nao agua.estaSolida()) agua.esfriar();
-        // while (agua.isNotSolida()) agua.esfriar();
+        Dado dado = new Dado(18); // mínimo e máximo: 4 a 20 // throw new IllegalArgumentException("motivo");
+        System.out.println(dado.getValor()); // um valor de 1 a 18
 
-        agua.congelar();
+        Dados dados = new Dados(); // dois dados de 6 lados
+        System.out.println(dado.getValor()); // um valor de 2 a 12
 
+        Dados dados = new Dados(3); // três dados de 6 lados
+        System.out.println(dado.getValor()); // um valor de 3 a 18
 
-        // uma API deve ser consistente
-        // uma API deve ser previsivel
-
-        System.out.println(agua.getTemperatura()); // 0
-
-
-
+        Dados dados = new Dados(3, 20); // três dados de 20 lados
+        dados.joga();
+        System.out.println(dado.getValor()); // um valor de 3 a 60 (todos somados)
+        System.out.println(dado.getValor(1)); // valor do primeiro
+        System.out.println(dado.getValor(2)); // valor do segundo
+        System.out.println(dado.getValor(3)); // valor do terceiro
+        // 22/4
 
     }
 }

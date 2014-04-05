@@ -1,1 +1,1 @@
-java -cp bin oo.Principal
+java -cp bin;lib\toolkit.jar oo.Principal

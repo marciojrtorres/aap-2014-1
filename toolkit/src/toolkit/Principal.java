@@ -5,14 +5,9 @@ import static toolkit.StringUtil.trimLeft;
 
 public class Principal {
     public static void main(String[] args) {
-        // comente/descomente a linha a seguir para orientacoes
-        // orientacoesGerais();
+        
+        System.out.println(Randomizer.random());        
 
-        System.out.println(eq("zzqq", "zzqq"));
-        System.out.println(eq("zzq",  "zzqq") == false);
-        System.out.println(eq("zzqa", "zzqq") == false);
-
-        System.out.println(eq(trimLeft("  ab ab "), "ab ab "));
     }
 
 

@@ -1,0 +1,3 @@
+md bin
+echo Compilando ...
+javac -cp bin;lib\commons-email-1.3.2.jar;lib\mail.jar src\carteiro\Principal.java -d bin
