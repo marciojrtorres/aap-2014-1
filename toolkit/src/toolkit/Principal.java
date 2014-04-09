@@ -1,13 +1,12 @@
 package toolkit;
 
-import static toolkit.StringUtil.eq;
-import static toolkit.StringUtil.trimLeft;
+import static java.lang.System.out;
+import static toolkit.StringUtil.substr;
 
 public class Principal {
     public static void main(String[] args) {
         
-        System.out.println(Randomizer.random());        
-
+        
     }
 
 

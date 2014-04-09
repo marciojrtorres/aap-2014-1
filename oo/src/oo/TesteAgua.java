@@ -1,4 +1,9 @@
- // Agua
+package oo;
+
+public class TesteAgua {
+    public static void main(String[] args) {
+
+        // Agua
         // todo objeto tem estado
 
         Agua agua = new Agua(); // instancia
@@ -31,3 +36,6 @@
         // uma API deve ser previsivel
 
         System.out.println(agua.getTemperatura()); // 0a
+
+    }
+}

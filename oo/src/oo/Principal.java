@@ -1,32 +1,37 @@
 package oo;
 
 public class Principal {
+
     public static void main(String[] args) {
-       
-        Dado dado = new Dado(); // de 1 a 6
-        // API do Dado (como usar o dado) (intenção)
-        System.out.println(dado.getValor()); // um valor de 1 a 6
-        dado.joga(); // mudei o estado
-        System.out.println(dado.getValor()); // outro valor
-        dado.joga(); // mudei o estado
-        System.out.println(dado.getValor()); // outro valor
 
-        Dado dado = new Dado(18); // mínimo e máximo: 4 a 20 // throw new IllegalArgumentException("motivo");
-        System.out.println(dado.getValor()); // um valor de 1 a 18
+        TimeSpan ts = new TimeSpan(15);  // 0,0,15
+                                        
+        System.out.println(ts.getHours());
+        System.out.println(ts.getMinutes());
+        System.out.println(ts.getSeconds());
 
-        Dados dados = new Dados(); // dois dados de 6 lados
-        System.out.println(dado.getValor()); // um valor de 2 a 12
+        TimeSpan t1 = new TimeSpan(1,0,0);
 
-        Dados dados = new Dados(3); // três dados de 6 lados
-        System.out.println(dado.getValor()); // um valor de 3 a 18
+        System.out.println(t1);  // t1.toString();      
+        System.out.println(t1.toString());  // t1.toString();      
 
-        Dados dados = new Dados(3, 20); // três dados de 20 lados
-        dados.joga();
-        System.out.println(dado.getValor()); // um valor de 3 a 60 (todos somados)
-        System.out.println(dado.getValor(1)); // valor do primeiro
-        System.out.println(dado.getValor(2)); // valor do segundo
-        System.out.println(dado.getValor(3)); // valor do terceiro
-        // 22/4
+        TimeSpan t2 = new TimeSpan(1,0,0);
+        System.out.println(t1 == t2); // false
+        System.out.println(t1.equals(t2)); // true
+
+        TimeSpan t3 = new TimeSpan(2,0,0);
+        //System.out.println(t2.compareTo(t3)); // Comparable
+        // positivo se o primeiro ob maior que o segundo
+        // zero se forem iguais
+        // negativo se o primeiro ob menor que o segundo
+        // TimeSpan[] horarios = {t1, t2, t3};
+        // java.util.Collections.sort(horarios);
+        TimeSpan t4 = new TimeSpan();
+        System.out.println(t4); // 00:00:00
+        t4.plusMinutes(70);
+        System.out.println(t4.getHours()); // 01:10:00
+        System.out.println(t4.getMinutes()); // 01:10:00
+        System.out.println(t4.getSeconds()); // 01:10:00
 
     }
 }

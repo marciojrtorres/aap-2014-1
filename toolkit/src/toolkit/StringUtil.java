@@ -2,72 +2,63 @@ package toolkit;
 
 public class StringUtil {
 
-    // CONSTANTE
-    private static final int ESPACO = 32;
-    
-    public static boolean eq(String s1, String s2) {
+    public static boolean eq (String string1, String string2) {
+
+        char [] frase1 = string1.toCharArray();
+        char [] frase2 = string2.toCharArray();
         
-        char[] l1 = s1.toCharArray();
-        char[] l2 = s2.toCharArray();
+        if (frase1.length != frase2.length) return false;
 
-        if (l1.length != l2.length) return false;
-
-        for (int i = 0; i < l1.length; i++) if (l1[i] != l2[i]) return false;
-
+        for (int i = 0; i < frase1.length; i++) {
+            if (frase1[i] != frase2[i]) {
+                return false;
+            }
+        }
         return true;
     }
 
-    public static String trimLeftBad(String s) {
 
-        char[] l = s.toCharArray();
-
-        int c = 0;
-
-        for (int i = 0; i < l.length; i++) {
-            if (l[i] == 32) {
-                c++;
-            } else {
-                break;
-            }
-        }
-
-        char[] r = new char[l.length - c];
-
-        for (int i = 0; i < r.length; i++) {
-            r[i] = l[i + c];
-        }
-
-        return new String(r);
+    public static String substr (String str, int posicaoInicial) {
+        // System.out.println("Método Reduzido");
+        return substr(str, posicaoInicial, str.length());
     }
 
+    public static String substr (String str, int posicaoInicial, int posicaoFinal) {
 
-    public static String trimLeft(String frase) {
-        // refatoração: pegar um codigo que ja funciona
-        // e altera-lo para melhorar a leitura e entendimento
-        // prática de refatoração, por exemplo:
-        // - renomear (mais legivel, facil de entender)
-        // - introduzir constante (eliminar numeros magicos)
-        // o que eh um numero magico? MAU CHEIRO (CODE SMELL)
+        char [] frase = str.toCharArray();
 
-        char[] letras = frase.toCharArray();
+        if (posicaoInicial < 0) posicaoInicial = posicaoInicial + frase.length;
 
-        int nroEspacos = 0;
+        if (posicaoInicial < 0) return new String(frase);
 
-        for (int i = 0; i < letras.length; i++) {
-            if (letras[i] == ESPACO) {
-                nroEspacos = nroEspacos + 1;
-            } else {
-                break;
-            }
-        }
+        if (posicaoFinal < 0) posicaoFinal = posicaoFinal + frase.length;
 
-        char[] resultado = new char[letras.length - nroEspacos];
+        if (posicaoFinal > frase.length) posicaoFinal = frase.length;
 
-        for (int i = 0; i < resultado.length; i++) {
-            resultado[i] = letras[i + nroEspacos];
-        }
+        int tamanho = posicaoFinal - posicaoInicial;
 
-        return new String(resultado);
+        if ((tamanho > frase.length) || (tamanho < 0)) return ""; //tamanho = 0; //frase.length;
+            
+        char [] novoString = new char [tamanho];
+
+        for (int i = 0; i < novoString.length; i++) novoString[i] = frase[posicaoInicial + i];
+
+        return new String(novoString);
+
     }
-
 }
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
