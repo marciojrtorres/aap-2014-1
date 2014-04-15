@@ -3,35 +3,43 @@ package oo;
 public class Principal {
 
     public static void main(String[] args) {
+ 
+        Cliente cliente = new Cliente("Bruno", new Conta(2000.0));
+        cliente.setIdade(28);
 
-        TimeSpan ts = new TimeSpan(15);  // 0,0,15
-                                        
-        System.out.println(ts.getHours());
-        System.out.println(ts.getMinutes());
-        System.out.println(ts.getSeconds());
+        Veiculo veiculo = new Veiculo(2010, 24000.0);
 
-        TimeSpan t1 = new TimeSpan(1,0,0);
+        Seguro seguro = new Seguro(cliente, veiculo);
 
-        System.out.println(t1);  // t1.toString();      
-        System.out.println(t1.toString());  // t1.toString();      
+        System.out.println(seguro.getValor()); // 0.0
 
-        TimeSpan t2 = new TimeSpan(1,0,0);
-        System.out.println(t1 == t2); // false
-        System.out.println(t1.equals(t2)); // true
+        
 
-        TimeSpan t3 = new TimeSpan(2,0,0);
-        //System.out.println(t2.compareTo(t3)); // Comparable
-        // positivo se o primeiro ob maior que o segundo
-        // zero se forem iguais
-        // negativo se o primeiro ob menor que o segundo
-        // TimeSpan[] horarios = {t1, t2, t3};
-        // java.util.Collections.sort(horarios);
-        TimeSpan t4 = new TimeSpan();
-        System.out.println(t4); // 00:00:00
-        t4.plusMinutes(70);
-        System.out.println(t4.getHours()); // 01:10:00
-        System.out.println(t4.getMinutes()); // 01:10:00
-        System.out.println(t4.getSeconds()); // 01:10:00
+        /*
+        Conta c = new ContaEspecial(500.0, 200.0);
 
+        System.out.println(c.getSaldo()); // 700.0
+
+        // System.out.println(c.getLimite()); // nao funciona
+
+        System.out.println(((ContaEspecial)c).getLimite());
+
+        System.out.println(c instanceof Conta);
+
+        System.out.println(c.getSaldo()); // saldo + limite
+
+        ContaEspecial ce = new ContaEspecial(500.0, 500.0);
+
+        Cliente cli = new Cliente("Porto", new UmaClasseQualquer());     
+        
+        System.out.println(cli.getConta().getSaldo());        
+        */
     }
 }
+
+class UmaClasseQualquer extends ContaEspecial {
+    public UmaClasseQualquer() {
+        super(1000.0, 1000.0);
+    }
+}
+

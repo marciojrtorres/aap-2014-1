@@ -77,7 +77,7 @@ public class TimeSpan { // extends Object {
 
     @Override // sobrescreve
     public String toString() {
-        return h + ":" + m + ":" + s;
+        return String.format("%02d:%02d:%02d", h, m, s);
     }
     // t1.equals(t1) == t1 == t1
     @Override
