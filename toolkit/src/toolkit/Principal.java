@@ -1,12 +1,13 @@
 package toolkit;
 
-import static java.lang.System.out;
-import static toolkit.StringUtil.substr;
 
 public class Principal {
     public static void main(String[] args) {
+        // API: Application Programming Interface
+    	// Interface de Programação de Aplicativos
         
-        
+    	
+    	
     }
 
 
