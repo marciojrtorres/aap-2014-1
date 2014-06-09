@@ -3,8 +3,56 @@ package toolkit;
 
 public class Principal {
     public static void main(String[] args) {
-        // API: Application Programming Interface
-    	// Interface de Programação de Aplicativos
+    	IList lista = new List();
+    	
+    	System.out.println(lista.length() == 0);
+
+    	lista.append("a");
+
+    	System.out.println(lista.length() == 1);
+
+    	
+    	lista.append("b");
+    	lista.append("c");
+    	lista.append("d");
+    	lista.append("e");
+
+    	System.out.println(lista.length() == 5);
+    	
+    	
+    	lista.append(null);
+
+    	System.out.println(lista.length() == 5);
+
+    	
+    	System.out.println(lista.get(0).equals("a"));
+    	System.out.println(lista.get(4).equals("e"));    	
+    	
+    	System.out.println(lista.get(5) == null);
+    	System.out.println(lista.get(-8) == null);
+    	
+    	
+
+    	System.out.println(lista.drop(1) == true); 
+
+    	System.out.println(lista.length() == 4);
+    	
+    	// while (lista.drop(0)); 
+
+    	// System.out.println(lista.length() == 0);
+    	
+    	System.out.println(lista.get(0).equals("a"));
+    	System.out.println(lista.get(1).equals("c"));
+    	System.out.println(lista.get(2).equals("d"));
+    	System.out.println(lista.get(3).equals("e"));
+
+    	System.out.println(lista.drop(7) == false);
+
+    	System.out.println(lista.length() == 4);
+
+    	for (int i = 0; i < 1000; i++) lista.append("teste");
+
+    	System.out.println(lista.length() == 1004);
         
     	
     	

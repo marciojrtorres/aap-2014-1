@@ -9,6 +9,7 @@ public class StringUtil {
         
         if (frase1.length != frase2.length) return false;
 
+        // TODO refatorar esse "for"
         for (int i = 0; i < frase1.length; i++) {
             if (frase1[i] != frase2[i]) {
                 return false;
