@@ -48,9 +48,11 @@ public class ContatoDAO {
 		Connection con = 
 				DriverManager.getConnection(url, usuario, senha);
 		
-		Statement comando = con.createStatement();
+		String sql = "DELETE FROM contatos WHERE id = ?";
 		
-		comando.execute("DELETE FROM contatos WHERE id = " + id);
+		PreparedStatement comando = con.prepareStatement(sql);
+		
+		comando.execute();
 		
 		con.close();
 		
@@ -67,9 +69,11 @@ public class ContatoDAO {
 		Connection con = 
 				DriverManager.getConnection(url, usuario, senha);
 		
-		Statement comando = con.createStatement();
+		String sql = "SELECT * FROM contatos WHERE id = ?";
 		
-		ResultSet rs = comando.executeQuery("SELECT * FROM contatos WHERE id = " + id);
+		PreparedStatement comando = con.prepareStatement(sql);
+		
+		ResultSet rs = comando.executeQuery();
 		
 		Contato contato = null;
 		
